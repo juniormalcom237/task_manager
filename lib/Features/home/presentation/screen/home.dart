@@ -30,6 +30,11 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Color(0xff282A3A),
+      // appBar: AppBar(
+      //   automaticallyImplyLeading: false,
+//nvkfva
+      // ),
+
       backgroundColor: Color(0xff222222),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
