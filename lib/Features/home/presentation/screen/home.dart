@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:task_management_flutter/Features/calendar/presentation/screens/calendar.dart';
 import 'package:task_management_flutter/Features/home/presentation/screen/add_task_screen.dart';
 import 'package:task_management_flutter/Features/home/presentation/screen/main_screen.dart';
-import 'package:task_management_flutter/Features/home/presentation/screen/search_screeen.dart';
+import 'package:task_management_flutter/Features/categories/presentation/screens/search_screeen.dart';
 import 'package:task_management_flutter/Features/home/presentation/screen/setting_screen.dart';
 import 'package:task_management_flutter/Features/home/presentation/widgets/activity_card.dart';
 
@@ -21,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> _screens = [
     MainScreen(),
     SearchScreen(),
-    AddTaskScreen(),
+    Calendar(),
     SettingScreen()
   ];
 
