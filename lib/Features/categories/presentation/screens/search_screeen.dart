@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:task_management_flutter/Features/categories/presentation/screens/category_screen.dart';
 
 import '../../../home/presentation/widgets/activity_item.dart';
 import '../widgets/categories_widget.dart';
