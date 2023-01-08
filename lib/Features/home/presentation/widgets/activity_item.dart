@@ -2,14 +2,14 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:flutter/material.dart';
 
 class Activity_items extends StatelessWidget {
-  const Activity_items(
-      {Key? key,
-      this.title,
-      this.subtitle,
-      this.date,
-      this.percentage,
-      this.backgroundImage})
-      : super(key: key);
+  const Activity_items({
+    Key? key,
+    this.title,
+    this.subtitle,
+    this.date,
+    this.percentage,
+    this.backgroundImage,
+  }) : super(key: key);
   final String? title;
   final String? subtitle;
   final String? date;
@@ -40,10 +40,14 @@ class Activity_items extends StatelessWidget {
           ),
           Text(
             "MONEEQ WebDesign",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(
+              color: Colors.white,
+            ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
           SizedBox(
-            height: 5,
+            height: MediaQuery.of(context).size.height * 0.005,
           ),
           Text(
             "Sat, 22 Nov 2022",
@@ -55,7 +59,7 @@ class Activity_items extends StatelessWidget {
             lineHeight: 3.0,
             percent: 0.5,
             trailing: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(3.0),
               child: Text(
                 "50%",
                 style: TextStyle(color: Colors.white, fontSize: 10),

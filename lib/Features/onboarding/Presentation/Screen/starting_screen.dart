@@ -7,6 +7,7 @@ class StartingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
     return Scaffold(
       // backgroundColor: Color(0xffF0E9D2),
       // backgroundColor: Color(0xff282A3A),
@@ -21,7 +22,7 @@ class StartingScreen extends StatelessWidget {
                   Column(
                     children: [
                       SizedBox(
-                        height: 80,
+                        height: MediaQuery.of(context).size.height * 0.07,
                       ),
                       Text(
                         "Stay Focus",
@@ -32,42 +33,33 @@ class StartingScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 30,
+                        height: MediaQuery.of(context).size.height * 0.06,
                       ),
                       Container(
+                        height: media.height * 0.35,
                         child: Image.asset("assets/images/bg2.png"),
                       ),
                       SizedBox(
-                        height: 80,
+                        height: media.height * 0.08,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 20, right: 20),
                         child: Text(
                           "Steady progress, without a mess",
-                          style: GoogleFonts.poppins(
-                            fontSize: 35,
-                            height: 1.4,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white,
-                          ),
+                          style: Theme.of(context).textTheme.headline1,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           softWrap: true,
                         ),
                       ),
                       SizedBox(
-                        height: 10,
+                        height: media.height * 0.01,
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 20, right: 20),
                         child: Text(
                           "Hey! A single place for your team to communicate, act on task, track progress and deliver goal with no stress",
-                          style: TextStyle(
-                            fontSize: 18,
-                            wordSpacing: 1.5,
-                            height: 1.4,
-                            color: Colors.white,
-                          ),
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
                       ),
                       SizedBox(
@@ -97,7 +89,7 @@ class StartingScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 92,
+                        height: 70,
                       )
                     ],
                   ),
@@ -125,19 +117,19 @@ class StartingScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Positioned(
-                    bottom: -70,
-                    right: -100,
-                    child: Container(
-                      height: 200,
-                      width: 200,
-                      decoration: BoxDecoration(
-                        color: Color(0xffE0D6B9FF),
-                        // color: Colors.pinkAccent,
-                        borderRadius: BorderRadius.circular(100),
-                      ),
-                    ),
-                  ),
+                  // Positioned(
+                  //   bottom: -70,
+                  //   right: -100,
+                  //   child: Container(
+                  //     height: 200,
+                  //     width: 200,
+                  //     decoration: BoxDecoration(
+                  //       color: Color(0xffE0D6B9FF),
+                  //       // color: Colors.pinkAccent,
+                  //       borderRadius: BorderRadius.circular(100),
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
             ],

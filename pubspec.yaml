@@ -39,6 +39,8 @@ dependencies:
   google_fonts:
   flutter_staggered_grid_view:
   percent_indicator: ^4.0.1
+  table_calendar:
+  intl:
 
 dev_dependencies:
   flutter_test:

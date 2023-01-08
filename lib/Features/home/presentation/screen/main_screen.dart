@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:task_management_flutter/Features/home/presentation/screen/button_text.dart';
 import 'package:task_management_flutter/Features/home/presentation/widgets/activity_item.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
 
   @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  void incrementState() {
+    setState(() {
+      index = index + 1;
+    });
+  }
+
+  ///It doesn't change
+  int index = 0;
+  @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Color(0xff222222),
         body: SafeArea(
@@ -63,10 +78,10 @@ class MainScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 5,
                   ),
                   Container(
-                    height: 70,
+                    height: 60,
                     child: ListTile(
                       leading: Text(
                         "Recent Activity",
@@ -82,7 +97,7 @@ class MainScreen extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    height: MediaQuery.of(context).size.height * 0.3,
+                    height: media.height > 884 ? 270 : 230,
                     margin: EdgeInsets.only(left: 10, right: 5),
                     child: StaggeredGrid.count(
                       crossAxisCount: 4,
@@ -117,13 +132,14 @@ class MainScreen extends StatelessWidget {
                                       style: TextStyle(color: Colors.grey),
                                     ),
                                     trailing: CircularPercentIndicator(
-                                      radius: 20.0,
-                                      lineWidth: 2.0,
+                                      radius: media.width * 0.05,
+                                      lineWidth: media.width * 0.008,
                                       percent: 0.30,
                                       center: new Text(
                                         "30%",
-                                        style:
-                                            TextStyle(color: Colors.lightGreen),
+                                        style: TextStyle(
+                                            color: Colors.lightGreen,
+                                            fontSize: 12),
                                       ),
                                       progressColor: Colors.lightGreen,
                                     ),
@@ -140,14 +156,14 @@ class MainScreen extends StatelessWidget {
                         ),
                         StaggeredGridTile.count(
                           crossAxisCellCount: 2,
-                          mainAxisCellCount: 2,
+                          mainAxisCellCount: 1.84,
                           child: Activity_items(
                             backgroundImage: "assets/images/bg6.png",
                           ),
                         ),
                         StaggeredGridTile.count(
                             crossAxisCellCount: 2,
-                            mainAxisCellCount: 1.4,
+                            mainAxisCellCount: 1.33,
                             child: Activity_items(
                               backgroundImage: "assets/images/bg14.png",
                             )),
