@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:task_management_flutter/Features/Task/presentation/Screen/detailScreen.dart';
 import 'package:task_management_flutter/Features/categories/presentation/screens/category_screen.dart';
+import 'package:task_management_flutter/Features/Task/presentation/screen/add_task_screen.dart';
 import 'package:task_management_flutter/Features/home/presentation/screen/home.dart';
 import 'package:task_management_flutter/Features/onboarding/Presentation/Screen/starting_screen.dart';
 import 'package:task_management_flutter/utils/taskManager_theme.dart';
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeScreen.url: (ctx) => const HomeScreen(),
         CategoryScreen.url: (ctx) => const CategoryScreen(),
-        TaskDetailScreen.url: (ctx) => const TaskDetailScreen()
+        TaskDetailScreen.url: (ctx) => const TaskDetailScreen(),
+        AddTaskScreen.url: (ctx) => AddTaskScreen(),
       },
     );
   }

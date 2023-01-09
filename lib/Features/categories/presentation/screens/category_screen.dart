@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:task_management_flutter/Features/Task/presentation/screen/add_task_screen.dart';
 
 import '../../../Task/presentation/Screen/detailScreen.dart';
 
@@ -15,7 +16,13 @@ class CategoryScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: Color(0xff222222),
         title: Text("Goal"),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.add))],
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(AddTaskScreen.url);
+              },
+              icon: Icon(Icons.add))
+        ],
       ),
       body: SingleChildScrollView(
         child: Container(
