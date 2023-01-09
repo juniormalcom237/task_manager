@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
+import '../../../Task/presentation/Screen/detailScreen.dart';
+
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({Key? key}) : super(key: key);
   static String url = "/categoryScreen";
@@ -70,61 +72,66 @@ class CategoryScreen extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              Container(
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamed(TaskDetailScreen.url);
+                },
                 child: Container(
-                  padding: EdgeInsets.only(bottom: 10),
-                  margin: EdgeInsets.only(bottom: 20),
-                  decoration: BoxDecoration(
-                    color: Color(0xff424242),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Column(
-                    children: [
-                      ListTile(
-                        leading: Container(
-                          height: 40,
-                          width: 40,
-                          decoration: BoxDecoration(
-                            color: Colors.deepPurple,
-                            borderRadius: BorderRadius.circular(8),
+                  child: Container(
+                    padding: EdgeInsets.only(bottom: 10),
+                    margin: EdgeInsets.only(bottom: 20),
+                    decoration: BoxDecoration(
+                      color: Color(0xff424242),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              color: Colors.deepPurple,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Icon(CupertinoIcons.ant),
                           ),
-                          child: Icon(CupertinoIcons.ant),
+                          title: Text("Unity Dashboards"),
+                          subtitle: Text("Design"),
+                          contentPadding: EdgeInsets.only(left: 10, right: 10),
+                          minVerticalPadding: 2,
+                          trailing: Chip(
+                            label: Text("10/10"),
+                            backgroundColor: Colors.deepPurple,
+                          ),
                         ),
-                        title: Text("Unity Dashboards"),
-                        subtitle: Text("Design"),
-                        contentPadding: EdgeInsets.only(left: 10, right: 10),
-                        minVerticalPadding: 2,
-                        trailing: Chip(
-                          label: Text("10/10"),
-                          backgroundColor: Colors.deepPurple,
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 10, right: 10, bottom: 5),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Progress",
+                                style: Theme.of(context).textTheme.caption,
+                              ),
+                              Text(
+                                "70%",
+                                style: Theme.of(context).textTheme.caption,
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            left: 10, right: 10, bottom: 5),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Progress",
-                              style: Theme.of(context).textTheme.caption,
-                            ),
-                            Text(
-                              "70%",
-                              style: Theme.of(context).textTheme.caption,
-                            ),
-                          ],
+                        SizedBox(
+                          height: 6,
                         ),
-                      ),
-                      SizedBox(
-                        height: 6,
-                      ),
-                      LinearPercentIndicator(
-                        percent: 0.7,
-                        backgroundColor: Colors.grey,
-                        progressColor: Colors.deepPurple,
-                      )
-                    ],
+                        LinearPercentIndicator(
+                          percent: 0.7,
+                          backgroundColor: Colors.grey,
+                          progressColor: Colors.deepPurple,
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
