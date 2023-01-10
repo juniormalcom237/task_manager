@@ -19,7 +19,7 @@ class SettingScreen extends StatelessWidget {
                   height: 20,
                 ),
                 Text(
-                  "Settings",
+                  "Settings.",
                   style: Theme.of(context).textTheme.headline2,
                 ),
                 SizedBox(
@@ -150,7 +150,7 @@ class SettingScreen extends StatelessWidget {
                   horizontalTitleGap: 13,
                   contentPadding: EdgeInsets.all(0),
                   title: Text(
-                    "Dark Mode",
+                    "Dark Modes",
                     style: Theme.of(context).textTheme.headline4,
                   ),
                   leading: CircleAvatar(
