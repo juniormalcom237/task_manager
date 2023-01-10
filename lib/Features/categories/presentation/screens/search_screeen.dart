@@ -10,6 +10,157 @@ import '../widgets/categories_widget.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);
+  void showModalBottom(BuildContext ctx) async {
+    showModalBottomSheet(
+        backgroundColor: Colors.transparent,
+        context: ctx,
+        builder: (cont) {
+          return Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              height: 400,
+              decoration: BoxDecoration(
+                color: Color(0xff222222),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey,
+                    blurRadius: 4,
+                    blurStyle: BlurStyle.outer,
+                    offset: Offset(5, 8),
+                    spreadRadius: 1.0,
+                  )
+                ],
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: MediaQuery.of(ctx).size.width * 1,
+                    child: Text(
+                      "Add a Category",
+                      textAlign: TextAlign.center,
+                      style: Theme.of(ctx).textTheme.headline3,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Text(
+                      "Category Name",
+                      style: Theme.of(ctx).textTheme.caption,
+                    ),
+                  ),
+                  Container(
+                    height: 50,
+                    padding: EdgeInsets.only(
+                      left: 10,
+                      right: 10,
+                    ),
+                    margin: const EdgeInsets.symmetric(vertical: 8.0),
+                    decoration: BoxDecoration(
+                        color: Color(0xff424242),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: TextField(
+                      decoration: InputDecoration(
+                          hintText: "Name ", border: InputBorder.none),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(8.0),
+                  //   child: Text(
+                  //     "Descrition",
+                  //     style: Theme.of(ctx).textTheme.caption,
+                  //   ),
+                  // ),
+                  // Container(
+                  //   height: 50,
+                  //   padding: EdgeInsets.only(
+                  //     left: 10,
+                  //     right: 10,
+                  //   ),
+                  //   margin: EdgeInsets.symmetric(horizontal: 10),
+                  //   decoration: BoxDecoration(
+                  //       color: Color(0xff424242),
+                  //       borderRadius: BorderRadius.circular(15)),
+                  //   child: TextField(
+                  //     decoration: InputDecoration(
+                  //         hintText: "Description ", border: InputBorder.none),
+                  //   ),
+                  // ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Choose an Emojie",
+                    style: Theme.of(ctx).textTheme.caption,
+                  ),
+                  Container(
+                    width: MediaQuery.of(ctx).size.width,
+                    height: 70,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Color(0xffFF597B),
+                          child: Text("🎯"),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Color(0xff5BC0F8),
+                          child: Text("🚀"),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Color(0xff453C67),
+                          child: Text("🧠"),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Color(0xff242424),
+                          child: Icon(Icons.add),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: MediaQuery.of(ctx).size.width * 1,
+                    height: 50,
+                    // decoration: BoxDecoration(
+                    //   borderRadius: BorderRadius.circular(),
+                    // ),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15))),
+                      onPressed: () {},
+                      child: Text("Add a category"),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +203,7 @@ class SearchScreen extends StatelessWidget {
                             onPressed: () {
                               print("Action 1 is been clicked");
                               Navigator.of(context).pop();
+                              showModalBottom(context);
                             },
                           ),
                           CupertinoActionSheetAction(
