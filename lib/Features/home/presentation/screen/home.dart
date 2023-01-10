@@ -7,7 +7,7 @@ import 'package:task_management_flutter/Features/calendar/presentation/screens/c
 import 'package:task_management_flutter/Features/home/presentation/screen/add_task_screen.dart';
 import 'package:task_management_flutter/Features/home/presentation/screen/main_screen.dart';
 import 'package:task_management_flutter/Features/categories/presentation/screens/search_screeen.dart';
-import 'package:task_management_flutter/Features/home/presentation/screen/setting_screen.dart';
+import 'package:task_management_flutter/Features/Settings/presentation/Screens/setting_screen.dart';
 import 'package:task_management_flutter/Features/home/presentation/widgets/activity_card.dart';
 
 class HomeScreen extends StatefulWidget {
